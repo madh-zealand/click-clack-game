@@ -1,0 +1,242 @@
+:root {
+    --color-background: #fdf2f8;
+    --color-light: #cad5e2;
+    --color-primary: #fb64b6;
+    --color-dark: #1d293d;
+    --color-border: #62748e;
+    --spacing: 4px;
+    --spacing-lg: 8px;
+    --spacing-xl: 16px;
+    --radius: 2px;
+    --radius-full: 50%;
+    --box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+}
+
+body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-background);
+    font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.screen--back-button {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-light);
+    border-radius: var(--radius);
+    padding: 8px 16px;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+    box-shadow: var(--box-shadow);
+}
+.screen--back-button:hover {
+    background-color: var(--color-primary);
+}
+
+/* Highscore Screen */
+.screen-highscore {
+    display: flex;
+    flex-direction: column;
+}
+.highscore-table {
+    width: 500px;
+    height: 500px;
+}
+.highscore-table iframe {
+    border: none;
+    border-radius: var(--radius);
+}
+
+/* Menu Screen */
+.screen-menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+.menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-light);
+    border-radius: var(--radius);
+    padding: 24px 48px;
+    color: var(--color-dark);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+    box-shadow: var(--box-shadow);
+}
+.menu-button:hover {
+    background-color: var(--color-primary);
+}
+
+/* Game Screen */
+.screen-game {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.game-over-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(202, 213, 226, 0.95);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.game-over-score {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: var(--spacing-lg) var(--spacing-xl);
+}
+
+.submit-name-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+    border-radius: var(--radius);
+    padding: 18px 24px;
+    border: 2px solid var(--color-border);
+    color: var(--color-dark);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+    border-radius: var(--radius);
+    padding: 16px 32px;
+    margin-top: var(--spacing-lg);
+    color: var(--color-dark);
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+    box-shadow: var(--box-shadow);
+}
+.submit-button:hover {
+    background-color: var(--color-primary);
+}
+.submit-button[disabled] {
+    color: var(--color-light);
+    background-color: var(--color-background);
+    pointer-events: none;
+    cursor: default;
+}
+
+.exit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+    border-radius: var(--radius);
+    padding: 16px 32px;
+    margin-top: var(--spacing-lg);
+    color: var(--color-dark);
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+    box-shadow: var(--box-shadow);
+}
+.exit-button:hover {
+    background-color: var(--color-primary);
+}
+.exit-button[disabled] {
+    color: var(--color-light);
+    background-color: var(--color-background);
+    pointer-events: none;
+    cursor: default;
+}
+
+/* Status Bar */
+.game-status-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    margin-bottom: var(--spacing);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: var(--spacing-lg) var(--spacing-xl);
+}
+
+.status-message {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    margin-right: var(--spacing-xl);
+    min-width: 50px;
+}
+.score--label {
+    height: 18px;
+    width: 18px;
+    margin-right: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+}
+
+/* Game Grid */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: var(--spacing);
+    width: 500px;
+    height: 500px;
+}
+
+.cell {
+    background-color: var(--color-light);
+    border-radius: var(--radius);
+    transition: all 300ms ease-in-out;
+}
+.cell.target {
+    background-color: var(--color-primary);
+}
+.cell.hit {
+    border-radius: var(--radius-full);
+    transform: scale(0%);
+    opacity: 0;
+}
+.cell.miss {
+    background-color: var(--color-dark);
+    transform: scale(110%);
+}

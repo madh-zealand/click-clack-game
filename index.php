@@ -1,7 +1,7 @@
 <?php
 
 // Set game id to easily change it both in the url to send highscores and showing the highscores
-$gameId = 2;
+$gameId = getenv('GAME_ID') ?: 2;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);

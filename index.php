@@ -69,6 +69,7 @@ $page = $_GET['page'] ?? 'menu';
 <body>
     Made responsive
     <div class="container">
+        Made this responsive
         <?php if ($page === 'menu'): ?>
             <div class="screen-menu">
                 <a

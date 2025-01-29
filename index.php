@@ -67,7 +67,7 @@ $page = $_GET['page'] ?? 'menu';
     <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
-    <div class="container">
+    <div class="container container-responsive">
         <?php if ($page === 'menu'): ?>
             <div class="screen-menu">
                 <a
